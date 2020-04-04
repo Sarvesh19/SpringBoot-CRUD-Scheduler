@@ -28,6 +28,12 @@ public class EmployeeController
 {
     @Autowired
     EmployeeService service;
+    
+    @GetMapping("/testHeroku")
+    public String getAllEmpl() {
+ 
+        return "Hello World";
+    }
  
     @GetMapping("/getAllEmpolyee")
     public ResponseEntity<List<EmployeeEntity>> getAllEmployees() {
