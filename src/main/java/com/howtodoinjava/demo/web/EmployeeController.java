@@ -22,7 +22,7 @@ import com.howtodoinjava.demo.service.EmployeeService;
  
 @RestController
 @RequestMapping("/employees")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="http://antonboot.s3-website.ap-south-1.amazonaws.com")
 
 public class EmployeeController
 {
