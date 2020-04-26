@@ -1,11 +1,21 @@
 package com.howtodoinjava.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapKey;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "TBL_EMPLOYEES")
@@ -39,6 +49,23 @@ public class EmployeeEntity {
 
 	@Column(name = "email", nullable = false, length = 200)
 	private String email;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "employeeEntity",
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true)
+	private List<VehicleDetail> list;
+	
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "employeeEntity",
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true)
+	
+	@MapKey(name = "id")
+	private Map<Long, VehicleDetail> mapVehicle;
+	
+	
 
 	public Long getId() {
 		return id;
@@ -71,10 +98,32 @@ public class EmployeeEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public List<VehicleDetail> getList() {
+		return list;
+	}
+
+	public void setList(List<VehicleDetail> list) {
+		this.list = list;
+	}
+	
+	
+
+	public Map<Long, VehicleDetail> getMapVehicle() {
+		return mapVehicle;
+	}
+
+	public void setMapVehicle(Map<Long, VehicleDetail> mapVehicle) {
+		this.mapVehicle = mapVehicle;
+	}
 
 	@Override
 	public String toString() {
 		return "EmployeeEntity [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ "]";
+				+ ", list=" + list + ", mapVehicle=" + mapVehicle + "]";
 	}
+
+	
+	
+	
+
 }
