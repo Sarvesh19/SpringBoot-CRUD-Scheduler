@@ -10,6 +10,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.sarvesh.springboot.demo.service.CustomUserDetailsService;
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -69,6 +71,38 @@ public class JwtFilter extends OncePerRequestFilter {
                     "access-control-request-headers,access-control-request-method,accept,origin,authorization,x-requested-with,responseType,observe");
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
         }
+        
+        
+        
+        
+//        {{short description|Indian actor}}
+//        {{Use dmy dates|date=March 2020}}
+//        {{Use Indian English|date=April 2014}}
+//        {{Infobox person
+//        | name               = Karan Bendre
+//        | occupation         = Actor
+//        | yearsactive        = 2019 – present
+//        | known_for          = Alap in ''[[Prem Poison Panga]]'' Marathi Serial
+//        }}
+//
+//        '''Karan Bendre''' <ref>https://www.imdb.com/name/nm11072905/</ref> is an [[India]]n [[actor]]. He is famous for appearing in the  role as Alap in ''[[Prem Poison Panga]]'' .
+//
+//
+//        ==Television==
+//        {| class="wikitable"
+//        |-
+//        ! Year!! Title !! Character !! Ref
+//        |-
+//        |2015
+//        |''[[Prem Poison Panga]]''|| Alap || <ref>https://www.zee5.com/tvshows/details/prem-poison-panga/0-6-2125</ref>
+//        |-
+
+        
+        
+        
+        
+        
+        
         
         
     }
